@@ -1,8 +1,8 @@
 ---
 title: Hexo标签语法
 tags:
-  - hexo
-  - markdown
+  - Hexo
+  - Markdown
 date: 2018-03-27 19:56:12
 updated: 2018-03-27 19:56:12
 ---

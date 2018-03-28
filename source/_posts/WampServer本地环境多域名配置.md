@@ -2,7 +2,7 @@
 title: WampServer本地环境多域名配置
 comments: false
 tags:
-  - wamp
+  - WampServer
 date: 2018-03-28 08:59:36
 updated: 2018-03-28 08:59:36
 ---
