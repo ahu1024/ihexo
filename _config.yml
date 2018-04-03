@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title:  Ahu
+title:  P.P
 subtitle: 学习 => 记录 => 分享
 description: 宇宙这么大,为什么我这么小?（旧文章数据整理发布中）
 keywords: 编程,生活,爱情
-author: Ahu
+author: Philip.Pei
 language: zh-Hans
 timezone: UTC
 
@@ -28,6 +28,7 @@ code_dir: downloads/code
 i18n_dir: :lang
 skip_render: 
   - 'demo/**'
+  - 'doc/**'
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -83,9 +84,9 @@ theme: next
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/ahu1024/ahu1024.github.io.git
+  repo: https://github.com/pch1024/pch1024.github.io.git
   branch: master
-  message: "博客更新♥by Ahu♥"
+  message: "博客更新♥by Philip.Pei♥"
 
 feed:
     type: atom

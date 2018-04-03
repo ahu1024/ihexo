@@ -2,23 +2,20 @@
 title: 求职简历（前端开发工程师）
 date: 2018-03-27 13:59:48
 ---
-> [PDF下载](/求职简历-前端开工程师-裴辰虎.pdf) | [单页版](/resume.html)
+> [PDF下载](/doc/求职简历-前端开工程师-裴辰虎.pdf) | [单页版](/doc/resume.html)
 <center>个人信息</center>
 -----
 姓名: ` 裴辰虎 `
 性别: ` 男 `
 年龄: ` 26 `    
-经验: ` 两年 `  
-手机: ` 17602115285 ` 
-邮箱: ` pch1024@outlook.com `   
-
-<center>教育信息</center>
------
-学历: ` 本科 `  
-学校: ` 聊城大学东昌学院 `
-专业: ` 软件工程 `
+工作经验: ` 两年 `    
+学历: ` 统招本科-软件工程 ` 
+工作经验: ` 两年 `   
 毕业时间: ` 2016/06 ` 
-英语水平: ` 四级 `
+手机: ` 17602115285 ` 
+邮箱: ` pch1024@outlook.com `
+GitHub: [https://github.com/pch1024](https://github.com/pch1024)
+技术博客: [http://peichenhu.cn](http://peichenhu.cn)
 
 <center>工作经历</center>
 -----
@@ -43,10 +40,9 @@ date: 2018-03-27 13:59:48
 熟练掌握`PhotoShop`，熟悉页面架构和布局，对用户体验、交互操作流程有深入理解。
 熟练使用JQuery、Less、AJax、`TweenMax`等进行快速开发。
 使用过WebPack、`VUE`、ES6进行个人开发。 
-Github: [https://github.com/ahu1024](https://github.com/ahu1024)
+Github: [https://github.com/pch1024](https://github.com/pch1024)
 
 <center>期望工作</center>
 -----
 地点: ` 北京 `
 薪资: ` 10K~15K `
-状态： `求职中`
