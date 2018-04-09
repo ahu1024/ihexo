@@ -1,6 +1,5 @@
 ---
 title: Canvas输出图片文件
-comments: false
 tags:
   - Canvas
 date: 2018-03-30 17:03:21

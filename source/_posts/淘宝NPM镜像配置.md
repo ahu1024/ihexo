@@ -1,6 +1,5 @@
 ---
 title: 淘宝NPM镜像配置
-comments: false
 tags:
   - cnpm
   - npm

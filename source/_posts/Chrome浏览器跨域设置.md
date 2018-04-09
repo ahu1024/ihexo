@@ -1,6 +1,5 @@
 ---
 title: Chrome浏览器跨域设置
-comments: false
 tags:
   - Chrome
   - 浏览器跨域

@@ -34,12 +34,11 @@ GitHub: [https://github.com/pch1024](https://github.com/pch1024)
 
 <center>个人技能</center>
 -----
-了解JSON、DOM、BOM、闭包、作用域、原型链、SEO等常用概念。
-了解一门后端编程语言-`PHP`，能够独立开发。
-有移动端H5页面开发经验，熟悉PC和H5端的web适配。
-熟练掌握`PhotoShop`，熟悉页面架构和布局，对用户体验、交互操作流程有深入理解。
-熟练使用JQuery、Less、AJax、`TweenMax`等进行快速开发。
-使用过WebPack、`VUE`、ES6进行个人开发。 
+熟练掌握HTML5、CSS3、Less、JavaScript、jQuery、Ajax、TweenMax等前端开发技术。
+拥有Bootstrap, Vue2、Element、Nodejs组件等方面开发经验。
+了解PHP、Yii2、MySQL等后端技术。
+熟悉Photoshop、Git、Webpack、Fiddler、Postman、Chrome DevTool等工具。
+对新技术ES6、CSS Grid、Typescript、parcel、等有浓厚的学习兴趣。
 Github: [https://github.com/pch1024](https://github.com/pch1024)
 
 <center>期望工作</center>

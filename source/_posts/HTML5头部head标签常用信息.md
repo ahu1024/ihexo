@@ -1,6 +1,5 @@
 ---
 title: HTML5头部head标签常用信息
-comments: false
 tags:
   - HTML
 date: 2018-03-28 10:08:32

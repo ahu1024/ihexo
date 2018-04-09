@@ -1,6 +1,5 @@
 ---
 title: ImageMagick组件安装
-comments: false
 tags:
   - ImageMagick
 date: 2018-03-30 16:55:13

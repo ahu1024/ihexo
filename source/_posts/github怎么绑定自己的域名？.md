@@ -1,6 +1,5 @@
 ---
 title: github怎么绑定自己的域名？
-comments: false
 tags:
   - GitHub
   - 域名
