@@ -18,7 +18,6 @@ undefined                                   // 未初始化的变量，由null�
 eval('console.log("evel")')                 // 完整强大的 ECMAScript 解析器
 instanceof                                  // object instanceof constructor 检测 constructor.prototype 是否存在于参数 object 的原型链
 typeof []                                   // 输出 object，检测变量的数据类型
-Object.prototype.toString.call([])          // 输出 [object Array]，检测引用类型的原型
 isNaN()                                     // 非数值型数据检测，自身不相等(null != null)
 isFinite()                                  // 检测某个数值是否在最大值（Number.MAX_VALUE）和最小（Number.MIN_VALUE）之间
 parseInt()                                  // 强制转换为整数，第二个参数可以指定进制格式(最好每次都带上进制，例如 parseInt("010",10))
@@ -30,4 +29,6 @@ decodeURIComponent('%2Fapi%3Fname%3Dbaidu') // 输出 '/api?name=baidu',适用�
 Array.isArray([]);                          // 返回 true
 Number.toString(/*n进制,默认为10进制*/)      // 例如 10.toString(2) 输出 '1010'
 Number.toFixed(/*指定小数位*/)               // 适合处理货币，四舍五入.例如(10.004).toFixed(2) 输出 10.00
+Object.hasOwnProperty("key")                // 检查属性是不是对象自己的，忽略掉那些从原型链上继承到的属性。
+Object.prototype.toString.call([])          // 输出 [object Array]，检测引用类型的原型
 ```
