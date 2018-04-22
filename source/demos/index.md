@@ -13,7 +13,7 @@ date: 2018-04-02 17:19:36
 哪里不懂点哪里，实时展示 Flex 所有特性
 
 
-## Mall VUE webapp 商城  [Demo](/demo/iMall)
+## Mall VUE webapp 商城  [Demo](http://imall.peichenhu.cn)
 vue 2.0 全家桶 - 移动商城个人作品（制作中）
 请打开浏览器手机模拟器预览
 
