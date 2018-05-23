@@ -18,8 +18,7 @@ export const DeepClone = obj => {
 	let result =
 		Object.prototype.toString.call(obj) === '[object Array]' ? [] : {}; // 参数是数组引用类型还是对象引用类型
 	for (let key in obj) {
-		result[key] =
-			typeof obj[key] === 'object' ? DeepClone(obj[key]) : obj[key]; // 值是引用类型进行深层递归，值是值类型直接返回
+		result[key] = typeof obj[key] === 'object' ? DeepClone(obj[key]) : obj[key]; // 值是引用类型进行深层递归，值是值类型直接返回
 	}
 	return result;
 };
@@ -34,7 +33,7 @@ export const eListener = (el, event, callback, capture) => {
 		Object.defineProperty({}, 'passive', {
 			get: () => {
 				passiveSupported = true;
-			}
+			},
 		});
 	} catch (err) {}
 
@@ -46,7 +45,7 @@ export const eListener = (el, event, callback, capture) => {
 			e.preventDefault();
 			e.stopPropagation();
 		},
-		passiveSupported ? { passive: true } : capture
+		passiveSupported ? { passive: true } : capture,
 	);
 };
 ```
@@ -67,7 +66,7 @@ export const DargDrop = options => {
 	let TouchEvents = {
 		start: isMobile ? 'touchstart' : 'mousedown', // 事件类型，开始
 		move: isMobile ? 'touchmove' : 'mousemove', // 事件类型，移动
-		end: isMobile ? 'touchend' : 'mouseup' // 事件类型，结束
+		end: isMobile ? 'touchend' : 'mouseup', // 事件类型，结束
 	};
 
 	eListener(el, TouchEvents.start, e => {
@@ -99,12 +98,52 @@ export const DargDrop = options => {
 			options.end(moveX, moveY, el, num); // 调用end()
 		}
 	};
-  
+
 	eListener(el, TouchEvents.end, _end);
 
 	// Mouse 兼容处理，解决当鼠标按压滑出目标元素时无法捕捉end,此时监听鼠标滑出目标元素事件leave
 	if (!isMobile) {
 		eListener(el, 'mouseleave', _end);
 	}
+};
+```
+
+## 直接修改外链样式表 class
+
+在一些极端形况下,我们需要直接修改外链样式表的 class 属性, 好处是可以在不影响行内样式的前提下重设某个公用 class 属性.
+
+```js
+// selector : 选择器(例如: '#id','div.clas','.clas > p')
+export const handlerCSS = (selector, styleName, styleValue) => {
+	let tmpClass = null;
+	let cssfilter = (obj, n) => {
+		let tmp = {};
+		while (n > 0) {
+			tmp[obj[n - 1]] = obj[obj[n - 1]];
+			n--;
+		}
+		return tmp;
+	};
+	let toEach = Array.prototype.forEach;
+	toEach.call(document.styleSheets, j => {
+		let rules = j.cssRules || j.rules;
+		toEach.call(rules, i => {
+			if (i.selectorText === selector) {
+				if (styleName && styleValue) {
+					i.style[styleName] = styleValue;
+				}
+				tmpClass = cssfilter(i.style, i.styleMap.size);
+			}
+		});
+	});
+	return tmpClass;
+};
+```
+
+## isNull
+
+```js
+export const isNull = str => {
+	return str === null || str === '' || str === undefined;
 };
 ```
