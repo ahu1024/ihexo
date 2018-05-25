@@ -114,14 +114,13 @@ export const DargDrop = options => {
 
 ```js
 // selector : 选择器(例如: '#id','div.clas','.clas > p')
-export const handlerCSS = (selector, styleName, styleValue) => {
+export const handlerCSS = (selector, styleList, styleName, styleValue) => {
   let tmpClass = null;
-  let cssfilter = (obj, n) => {
+  let cssfilter = obj => {
     let tmp = {};
-    while (n > 0) {
-      tmp[obj[n - 1]] = obj[obj[n - 1]];
-      n--;
-    }
+    styleList.forEach(name => {
+      tmp[name] = obj[name];
+    });
     return tmp;
   };
   let toEach = Array.prototype.forEach;
@@ -132,7 +131,7 @@ export const handlerCSS = (selector, styleName, styleValue) => {
         if (styleName && styleValue) {
           i.style[styleName] = styleValue;
         }
-        tmpClass = cssfilter(i.style, i.styleMap.size);
+        tmpClass = cssfilter(i.style);
       }
     });
   });
@@ -161,5 +160,49 @@ export const isNumber = i => {
 ```js
 export const realValue = i => {
   return isNaN(i - 0) ? i : i - 0;
+};
+```
+
+## 修正图片旋转属性
+
+```js
+import EXIF from 'exif-js';
+export const FixImg = (img, callback, quality = 0.98) => {
+  let Orientation, ctxWidth, ctxHeight, base64;
+  EXIF.getData(img, function() {
+    Orientation = EXIF.getTag(this, 'Orientation');
+    ctxWidth = this.naturalWidth;
+    ctxHeight = this.naturalHeight;
+    console.log(Orientation, ctxWidth, ctxHeight);
+
+    var canvas = document.createElement('canvas');
+    var ctx = canvas.getContext('2d');
+
+    if ([6, 8].includes(Orientation)) {
+      canvas.width = ctxHeight;
+      canvas.height = ctxWidth;
+    } else {
+      canvas.width = ctxWidth;
+      canvas.height = ctxHeight;
+    }
+
+    switch (Orientation) {
+      case 3:
+        ctx.transform(-1, 0, 0, -1, ctxWidth, ctxHeight);
+        break;
+      case 6:
+        ctx.transform(0, 1, -1, 0, ctxHeight, 0);
+        break;
+      case 8:
+        ctx.transform(0, -1, 1, 0, 0, ctxWidth);
+        break;
+      default:
+        ctx.transform(1, 0, 0, 1, 0, 0);
+    }
+
+    ctx.drawImage(img, 0, 0, ctxWidth, ctxHeight);
+    base64 = canvas.toDataURL('image/jpeg', quality);
+    callback(base64);
+  });
 };
 ```
