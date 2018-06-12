@@ -177,21 +177,31 @@ export const FixImg = (img, callback, quality = 0.98) => {
 
     var canvas = document.createElement('canvas');
     var ctx = canvas.getContext('2d');
-
-    if ([6, 8].includes(Orientation)) {
+    canvas.width = ctxWidth;
+    canvas.height = ctxHeight;
+    if ([5, 6, 7, 8].includes(Orientation)) {
       canvas.width = ctxHeight;
       canvas.height = ctxWidth;
-    } else {
-      canvas.width = ctxWidth;
-      canvas.height = ctxHeight;
     }
 
     switch (Orientation) {
+      case 2:
+        ctx.transform(-1, 0, 0, 1, ctxWidth, 0);
+        break;
       case 3:
         ctx.transform(-1, 0, 0, -1, ctxWidth, ctxHeight);
         break;
+      case 4:
+        ctx.transform(1, 0, 0, -1, 0, ctxHeight);
+        break;
+      case 5:
+        ctx.transform(0, 1, 1, 0, 0, 0);
+        break;
       case 6:
         ctx.transform(0, 1, -1, 0, ctxHeight, 0);
+        break;
+      case 7:
+        ctx.transform(0, -1, -1, 0, ctxHeight, ctxWidth);
         break;
       case 8:
         ctx.transform(0, -1, 1, 0, 0, ctxWidth);
